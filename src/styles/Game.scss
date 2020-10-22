@@ -1,0 +1,326 @@
+
+// Start | for demo
+
+
+@import 'https://fonts.googleapis.com/css?family=Roboto:100,300';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.3.2/css/simple-line-icons.min.css';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css';
+@import 'https://fonts.googleapis.com/css?family=Roboto+Mono:300,700';
+
+.container1 {
+    display: grid;
+    background-color:white;
+    height:100vh;
+    grid-gap: 3px;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+          "s s s q q q q q q"
+          "s s s q q q q q q"
+          "f f f q q q q q q"
+  }
+
+  .next{
+      position: absolute;
+      padding-left:25%;
+      padding-top:25%;
+      grid-area:f;
+  }
+  .state{
+      grid-area: s;
+      padding-left:5%;
+      display: block;
+    text-align: center;
+    margin:auto;
+    justify-content: center;
+    position: absolute;
+    padding-top: 10%;
+  }
+
+  img {
+    max-width:100%;
+    height:auto;
+}
+  
+
+  .question{
+      padding-top:5%;
+      padding-left: 35%;
+      grid-area: q;
+      display: block;
+    text-align: center;
+    align-content:center;
+      background-color: #ffb380;
+      
+  }
+
+
+.container3{
+    display: grid;
+    background-color: #ffb380;
+    grid-gap: 5px;
+    grid-template-columns: 40% 20% 15%;
+    grid-template-rows: 30% 20% 50% 20%;
+    grid-template-areas: 
+          "a"
+          "b"
+          "c"
+          "d"
+}
+.box{
+    grid-area: a;
+}
+.guess{
+  padding-top:10%;
+    grid-area:d;
+}
+.over-under{
+    grid-area:b;
+}
+
+.buttonRack2{
+  background-color: #2994B2;
+    outline: 5px solid black;
+    grid-area:c;
+}
+
+
+.selectdiv {
+    position: relative;
+    /*Don't really need this just for demo styling*/
+    
+   
+  }
+  
+  /* IE11 hide native button (thanks Matt!) */
+  select::-ms-expand {
+  display: none;
+  }
+  
+  .selectdiv:after {
+    content: '<>';
+    font: 17px "Consolas", monospace;
+    color: #333;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: 11px;
+    /*Adjust for position however you want*/
+    
+    top: 18px;
+    padding: 0 0 2px;
+    border-bottom: 1px solid #999;
+    /*left line */
+    
+    position: absolute;
+    pointer-events: none;
+  }
+  
+  .selectdiv select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* Add some styling */
+    
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    height: 50px;
+    float: right;
+    margin: 5px 0px;
+    padding: 0px 24px;
+    font-size: 16px;
+    line-height: 1.75;
+    color: #333;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #cccccc;
+    -ms-word-break: normal;
+    word-break: normal;
+  }
+
+  .btn-slide-line {
+    position: relative;
+    margin: 0;
+    padding: 5px 12px;
+    height: 60px;
+    width: 150px;
+    outline: none;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: #ffffff;
+    border: 1px solid rgba(22, 76, 167, 0.6);
+    border-radius: 10px;
+    color: #1d89ff;
+    font-weight: 400;
+    font-size: 20px;
+    font-family: inherit;
+    z-index: 0;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+    span {
+      color: #164ca7;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.7px;
+    }
+    &:hover {
+      animation: rotate 0.7s ease-in-out both;
+      span {
+        animation: storm 0.7s ease-in-out both;
+        animation-delay: 0.06s;
+      }
+    }
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+    25% {
+      transform: rotate(3deg) translate3d(0, 0, 0);
+    }
+    50% {
+      transform: rotate(-3deg) translate3d(0, 0, 0);
+    }
+    75% {
+      transform: rotate(1deg) translate3d(0, 0, 0);
+    }
+    100% {
+      transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+  }
+  @keyframes storm {
+    0% {
+      transform: translate3d(0, 0, 0) translateZ(0);
+    }
+    25% {
+      transform: translate3d(4px, 0, 0) translateZ(0);
+    }
+    50% {
+      transform: translate3d(-3px, 0, 0) translateZ(0);
+    }
+    75% {
+      transform: translate3d(2px, 0, 0) translateZ(0);
+    }
+    100% {
+      transform: translate3d(0, 0, 0) translateZ(0);
+    }
+  }
+  
+  .section {
+    text-align: center;
+    height: 10%;
+    margin: 0 auto;
+    padding: 6em 0; }
+    .section__title {
+      font-size: 1.1em;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: #fff;
+      margin-bottom: 3em; }
+    .section--valo {
+      background: #2994B2; }
+  
+  .toggle-button {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    margin: 0 20px; }
+    .toggle-button label {
+      display: inline-block;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-align: left; }
+    .toggle-button input {
+      display: none; }
+    .toggle-button__icon {
+      cursor: pointer;
+      pointer-events: none; }
+      .toggle-button__icon:before, .toggle-button__icon:after {
+        content: "";
+        position: absolute;
+        transition: 0.2s ease-out; }
+  
+  @media only screen and (max-width: 480px) {
+    .toggle-button--valo {
+      display: block;
+      width: 110px;
+      margin: 0 auto 10px auto; } }
+  
+  .toggle-button--valo label {
+    width: 110px;
+    height: 20px;
+    line-height: 20px;
+    transition: all 0.2s; }
+    .toggle-button--valo label:before, .toggle-button--valo label:after {
+      position: absolute;
+      top: 0;
+      left: 30px;
+      width: 110px;
+      transition: all 0.2s .1s ease-out; }
+    .toggle-button--valo label:before {
+      content: attr(data-text); }
+  
+  .toggle-button--valo input:checked ~ .toggle-button__icon:after {
+    transform: translate(0, 0);
+    animation: show .2s; }
+  
+  .toggle-button--valo .toggle-button__icon {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 20px;
+    width: 20px;
+    overflow: hidden;
+    border-radius: 50%; }
+    .toggle-button--valo .toggle-button__icon:before, .toggle-button--valo .toggle-button__icon:after {
+      border-radius: 50%; }
+    .toggle-button--valo .toggle-button__icon:before {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      box-shadow: inset 1px 1px 10px rgba(0, 0, 0, 0.15); }
+    .toggle-button--valo .toggle-button__icon:after {
+      top: 4px;
+      left: 4px;
+      width: 60%;
+      height: 60%;
+      background: #61B136;
+      animation: hide .2s ease-out;
+      transform: translate(0, 200%);
+      transition: none; }
+  
+  .toggle-button--valo:hover input:not(:checked) ~ .toggle-button__icon {
+    animation: hover .2s; }
+  
+  .toggle-button--valo:hover input:not(:checked) ~ label:before {
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2); }
+  
+  @keyframes hide {
+    0% {
+      transform: translate(0, 0); }
+    100% {
+      transform: translate(0, -200%); } }
+  
+  @keyframes show {
+    0% {
+      transform: translate(0, 200%); }
+    100% {
+      transform: translate(0, 0); } }
+  
+  @keyframes hover {
+    0% {
+      transform: scale(1); }
+    30% {
+      transform: scale(1.1); }
+    100% {
+      transform: scale(1); } }
